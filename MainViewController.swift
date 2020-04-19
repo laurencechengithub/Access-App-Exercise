@@ -10,7 +10,8 @@ import UIKit
 
 class MainViewController: UIViewController {
 
-    @IBOutlet weak var userTableView: UITableView!
+    var userTableView: UITableView!
+    
     lazy private var viewModel:MainViewModel = {
            return MainViewModel()
        }()
@@ -18,11 +19,42 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+
+        
     }
     
     
     
+    override func viewWillAppear(_ animated: Bool) {
+        
+
+        
+        userTableView = UITableView()
+        self.view.addSubview(userTableView)
+        
+        userTableView.translatesAutoresizingMaskIntoConstraints = false
+        userTableView.topAnchor.constraint(equalTo: self.view.topAnchor,constant: 100).isActive = true
+        userTableView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
+        userTableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
+        userTableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
+        userTableView.estimatedRowHeight = 80
+        userTableView.rowHeight = UITableView.automaticDimension
+        userTableView.register(usersTableViewCell.self, forCellReuseIdentifier: "usersTableViewCell")
+        userTableView.delegate = self
+        userTableView.dataSource = self
+        
+        viewModel.getInfoOfUsers(startFrom: 1) { (bool) in
+            if bool == true {
+                DispatchQueue.main.async {
+                    self.userTableView.reloadData()
+                }
+
+            } else {
+                
+            }
+        }
+    }
     
    
 }
@@ -31,17 +63,27 @@ extension MainViewController:UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return viewModel.list.count
+        if let list = viewModel.list {
+            return list.count
+        } else {
+            return 0
+        }
+ 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "usersTableViewCell") as! usersTableViewCell
-        cell.setData(imageURL: <#T##String#>, name: viewModel.list[indexPath.row].login)
+        if let list = viewModel.list {
+            cell.setData(dataArray: list, indexPath: indexPath)
+        }
         
+        return cell
     }
     
     
-    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
+    }
     
 }
