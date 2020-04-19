@@ -8,5 +8,6 @@ target 'Access App Exercise' do
   # Pods for Access App Exercise
   pod 'SwiftyJSON'
   pod 'Alamofire'
-
+  pod 'Kingfisher'
+  
 end
