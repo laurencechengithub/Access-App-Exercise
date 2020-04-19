@@ -14,8 +14,22 @@ class NetWorkManager {
 
     static var sharedInstance = NetWorkManager()
     private init() {}
-
-    func baseRequest(url:String,
+    
+    enum apiDomain {
+        case gitGeneral
+        
+        var url:String {
+            get {
+                switch self {
+                case .gitGeneral:
+                    return "https://api.github.com/"
+                }
+            }
+        }
+    }
+    
+    
+    private func baseRequest(url:String,
                      method:HTTPMethod = .get,
                      parameters:Parameters? = nil,
                      encoding:ParameterEncoding = URLEncoding.default,
@@ -35,4 +49,18 @@ class NetWorkManager {
         }
         
     }
+    
+    
+    func getAllUser(since:Int, completeHander: @escaping(GetAllUserDataModel?)->()) {
+        let param = ["since":since]
+        
+        baseRequest(url: "\(apiDomain.gitGeneral.url)", method: .get, parameters: param) { (data) in
+            guard let jsonData = data else {
+                   completeHander(nil)
+                   return
+            }
+            completeHander(GetAllUserDataModel(fromJson: jsonData))
+        }
+    }
+    
 }
