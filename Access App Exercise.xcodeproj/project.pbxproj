@@ -17,6 +17,7 @@
 		1409D6C4244B66660069A29B /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1409D6C3244B66660069A29B /* MainViewModel.swift */; };
 		1409D6C6244B69300069A29B /* GetAllUserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1409D6C5244B69300069A29B /* GetAllUserDataModel.swift */; };
 		1409D6C9244B6C550069A29B /* usersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1409D6C8244B6C550069A29B /* usersTableViewCell.swift */; };
+		14283971244D1A7900FE2308 /* AvatarDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14283970244D1A7900FE2308 /* AvatarDetailViewController.swift */; };
 		71DFFE0970B4F40AE31F1521 /* Pods_Access_App_Exercise.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BB81604D4C0659289085B71 /* Pods_Access_App_Exercise.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +34,7 @@
 		1409D6C3244B66660069A29B /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		1409D6C5244B69300069A29B /* GetAllUserDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllUserDataModel.swift; sourceTree = "<group>"; };
 		1409D6C8244B6C550069A29B /* usersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = usersTableViewCell.swift; sourceTree = "<group>"; };
+		14283970244D1A7900FE2308 /* AvatarDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarDetailViewController.swift; sourceTree = "<group>"; };
 		7239AA4359167886D959592E /* Pods-Access App Exercise.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Access App Exercise.debug.xcconfig"; path = "Target Support Files/Pods-Access App Exercise/Pods-Access App Exercise.debug.xcconfig"; sourceTree = "<group>"; };
 		9BB81604D4C0659289085B71 /* Pods_Access_App_Exercise.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Access_App_Exercise.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6E400342B2CDA6BE4A58DEC /* Pods-Access App Exercise.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Access App Exercise.release.xcconfig"; path = "Target Support Files/Pods-Access App Exercise/Pods-Access App Exercise.release.xcconfig"; sourceTree = "<group>"; };
@@ -56,15 +58,6 @@
 				1409D6C8244B6C550069A29B /* usersTableViewCell.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		140800B5244BEF4200DBF731 /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				1409D6AD244B5B290069A29B /* MainViewController.swift */,
-			);
-			name = ViewController;
-			path = ..;
 			sourceTree = "<group>";
 		};
 		1409D69D244B5B290069A29B = {
@@ -91,7 +84,7 @@
 				1409D6A9244B5B290069A29B /* AppDelegate.swift */,
 				1409D6AB244B5B290069A29B /* SceneDelegate.swift */,
 				1409D6C1244B64D20069A29B /* NetWorkManager.swift */,
-				140800B5244BEF4200DBF731 /* ViewController */,
+				14283973244D1A9D00FE2308 /* Vcontroller */,
 				140800B4244BDE3900DBF731 /* View */,
 				14CD6D71244C4F43008B0BC7 /* ViewModel */,
 				1409D6C7244B69390069A29B /* DataModel */,
@@ -109,6 +102,15 @@
 				1409D6C5244B69300069A29B /* GetAllUserDataModel.swift */,
 			);
 			path = DataModel;
+			sourceTree = "<group>";
+		};
+		14283973244D1A9D00FE2308 /* Vcontroller */ = {
+			isa = PBXGroup;
+			children = (
+				1409D6AD244B5B290069A29B /* MainViewController.swift */,
+				14283970244D1A7900FE2308 /* AvatarDetailViewController.swift */,
+			);
+			path = Vcontroller;
 			sourceTree = "<group>";
 		};
 		14CD6D71244C4F43008B0BC7 /* ViewModel */ = {
@@ -251,6 +253,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14283971244D1A7900FE2308 /* AvatarDetailViewController.swift in Sources */,
 				1409D6C4244B66660069A29B /* MainViewModel.swift in Sources */,
 				1409D6C6244B69300069A29B /* GetAllUserDataModel.swift in Sources */,
 				1409D6C2244B64D20069A29B /* NetWorkManager.swift in Sources */,

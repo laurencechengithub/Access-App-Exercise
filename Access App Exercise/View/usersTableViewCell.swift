@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class usersTableViewCell: UITableViewCell {
 
@@ -43,15 +44,16 @@ class usersTableViewCell: UITableViewCell {
         avatarNameLabel.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -20).isActive = true
         avatarNameLabel.textColor = UIColor.darkGray
         avatarNameLabel.textAlignment = .left
-        avatarNameLabel.font = UIFont.systemFont(ofSize: 12)
+        avatarNameLabel.font = UIFont.boldSystemFont(ofSize: 14)
               
         
     }
     
     func setData(dataArray:[GetAllUserData],indexPath:IndexPath) {
         
+        let imageUrl = URL(string: dataArray[indexPath.row].avatarURL)
+        avatarPicImageView.kf.setImage(with: imageUrl)
         self.avatarNameLabel.text = dataArray[indexPath.row].login
-        
         
     }
     

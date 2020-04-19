@@ -17,10 +17,29 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <segue destination="8oo-Rd-zbo" kind="show" identifier="toAvatarDetail" id="6XS-Qw-Htl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="133.92857142857142"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Gif-ls-ulf">
+            <objects>
+                <viewController id="8oo-Rd-zbo" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7Ir-Rq-pqd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="pgE-a0-ZVq"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="dDa-rL-Qxa"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uPE-QI-jJM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1221" y="141"/>
         </scene>
     </scenes>
 </document>

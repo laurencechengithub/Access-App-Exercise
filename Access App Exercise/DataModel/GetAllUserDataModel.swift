@@ -42,22 +42,22 @@ struct GetAllUserData {
     init(fromJson json:JSON) {
         self.login = json["login"].stringValue
         self.id = json["id"].intValue
-        self.nodeID = json["nodeID"].stringValue
-        self.avatarURL = json["avatarURL"].stringValue
-        self.gravatarID = json["gravatarID"].stringValue
+        self.nodeID = json["node_id"].stringValue
+        self.avatarURL = json["avatar_url"].stringValue
+        self.gravatarID = json["gravatar_id"].stringValue
         self.url = json["url"].stringValue
-        self.htmlURL = json["htmlURL"].stringValue
-        self.followersURL = json["followersURL"].stringValue
-        self.followingURL = json["followingURL"].stringValue
-        self.gistsURL = json["gistsURL"].stringValue
-        self.starredURL = json["starredURL"].stringValue
-        self.subscriptionsURL = json["subscriptionsURL"].stringValue
-        self.organizationsURL = json["organizationsURL"].stringValue
-        self.reposURL = json["reposURL"].stringValue
-        self.eventsURL = json["eventsURL"].stringValue
-        self.receivedEventsURL = json["receivedEventsURL"].stringValue
+        self.htmlURL = json["html_url"].stringValue
+        self.followersURL = json["followers_url"].stringValue
+        self.followingURL = json["following_url"].stringValue
+        self.gistsURL = json["gists_url"].stringValue
+        self.starredURL = json["starred_url"].stringValue
+        self.subscriptionsURL = json["subscriptions_url"].stringValue
+        self.organizationsURL = json["organizations_url"].stringValue
+        self.reposURL = json["repos_url"].stringValue
+        self.eventsURL = json["events_url"].stringValue
+        self.receivedEventsURL = json["received_events_url"].stringValue
         self.type = json["type"].stringValue
-        self.siteAdmin = json["siteAdmin"].boolValue
+        self.siteAdmin = json["site_admin"].boolValue
 
     }
     
