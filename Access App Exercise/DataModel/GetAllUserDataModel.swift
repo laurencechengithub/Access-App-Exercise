@@ -10,6 +10,20 @@ import Foundation
 import SwiftyJSON
 
 struct GetAllUserDataModel {
+    var dataArray: [GetAllUserData]
+    
+    init(fromJson json:JSON) {
+        
+        self.dataArray = json.arrayValue.map({
+            GetAllUserData(fromJson: $0)
+        })
+        
+    }
+    
+}
+
+
+struct GetAllUserData {
     
     let login: String
     let id: Int

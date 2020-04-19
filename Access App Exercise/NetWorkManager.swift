@@ -22,7 +22,7 @@ class NetWorkManager {
             get {
                 switch self {
                 case .gitGeneral:
-                    return "https://api.github.com/"
+                    return "https://api.github.com/users"
                 }
             }
         }
@@ -51,16 +51,69 @@ class NetWorkManager {
     }
     
     
-    func getAllUser(since:Int, completeHander: @escaping(GetAllUserDataModel?)->()) {
-        let param = ["since":since]
+    let defaultSession = URLSession(configuration: .default)
+    var dataTask:URLSessionTask?
+    
+    func getAllUser(since:Int, completeHander: @escaping([GetAllUserData]?)->()) {
+
+        self.dataTask?.cancel()
         
-        baseRequest(url: "\(apiDomain.gitGeneral.url)", method: .get, parameters: param) { (data) in
-            guard let jsonData = data else {
-                   completeHander(nil)
-                   return
-            }
-            completeHander(GetAllUserDataModel(fromJson: jsonData))
+        guard var urlComponent = URLComponents(string: apiDomain.gitGeneral.url) else {
+              return
         }
+        
+        urlComponent.query = "since=1&page=1&per_page=20"
+        
+        guard let url = urlComponent.url else {
+            return
+        }
+        
+        dataTask = defaultSession.dataTask(with: url, completionHandler: { (data, response, error) in
+            
+            if let error = error {
+                print("error message : \(error)")
+            } else if let theData = data, let theResponce = response as? HTTPURLResponse {
+                print(theData)
+                if theResponce.statusCode == 200 {
+                    
+                    let jsonData = JSON(theData)
+                    let result = GetAllUserDataModel(fromJson: jsonData)
+                    
+                    completeHander(result.dataArray)
+                } else {
+                    completeHander(nil)
+                }
+            }
+            
+        })
+        
+        dataTask?.resume()
+        
+//        guard let url = URL(string: apiDomain.gitGeneral.url) else {
+//            return
+//        }
+
+//        URLSession.shared.dataTask(with: url) { [weak self] (data, response, error) in
+//            guard let theData = data else {
+//                print("RequestManager getCurrecyRate : data is nil")
+//                return
+//            }
+//
+//            do {
+//               let modelData = try JSONDecoder().decode(GetAllUserDataModel.self, from: theData)
+//                completeHander(modelData)
+//            } catch {
+//
+//                let showError = error
+//                print(" getCurrecyRate error : \(showError)")
+//            }
+//        }.resume()
+        
+        
     }
+    
+    
+    
+    
     
 }
