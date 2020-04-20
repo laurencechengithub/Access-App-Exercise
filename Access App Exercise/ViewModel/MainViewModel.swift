@@ -12,7 +12,8 @@ import Foundation
 final class MainViewModel {
     
     var list: [GetAllUserData]?
-    var avatarDetail: SingleAvatorDataModel?
+//    var singleAvatorDataModel: SingleAvatorDataModel?
+    var avatarDetailVM:AvatarDetailViewModel!
     
     func getInfoOfUsers(startFrom:Int, isCompleteTask: @escaping (Bool)->()) {
         
@@ -37,7 +38,8 @@ final class MainViewModel {
                 isCompleteTask(false)
                 return
             }
-            self.avatarDetail = avatar
+            self.avatarDetailVM = AvatarDetailViewModel(singleAvatorDataModel: avatar)
+//            self.singleAvatorDataModel = avatar
             isCompleteTask(true)
         }
         

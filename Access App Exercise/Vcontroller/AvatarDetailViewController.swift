@@ -7,24 +7,43 @@
 //
 
 import UIKit
+import Kingfisher
 
 class AvatarDetailViewController: UIViewController {
-
+    
+    weak var viewModel : AvatarDetailViewModel!
+    
+    @IBOutlet weak var avatarImageView: UIImageView!
+    @IBOutlet weak var avatarNameLabel: UILabel!
+    @IBOutlet weak var avatarLoginLable: UILabel!
+    @IBOutlet weak var avatarLocation: UILabel!
+    @IBOutlet weak var avatarBlogLabel: UILabel!
+    @IBOutlet weak var closeBtn: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setView()
+    }
+        
+    
+    func setView () {
+        
+        if let avatarDetail = viewModel.avatarDetail {
+            let imageUrl = URL(string: avatarDetail.avatarURL)
+            avatarImageView.kf.setImage(with: imageUrl)
+            
+            self.avatarNameLabel.text = avatarDetail.name
+            self.avatarLoginLable.text = avatarDetail.login
+            self.avatarBlogLabel.text = avatarDetail.blog
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func closeBtnTapped(_ sender: UIButton) {
+        
+        self.dismiss(animated: true) {
+            
+        }
+        
     }
-    */
 
 }

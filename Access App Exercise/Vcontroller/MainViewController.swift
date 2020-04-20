@@ -70,7 +70,9 @@ class MainViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
         case "toAvatarDetail":
+            
             let destinationVC = segue.destination as! AvatarDetailViewController
+            destinationVC.viewModel = self.viewModel.avatarDetailVM
             
         default:
             break
