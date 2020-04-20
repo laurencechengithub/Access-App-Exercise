@@ -22,8 +22,6 @@ class MainViewController: UIViewController {
         
     }
     
-    
-    
     override func viewWillAppear(_ animated: Bool) {
         
         userTableView = UITableView()
@@ -40,16 +38,22 @@ class MainViewController: UIViewController {
         userTableView.delegate = self
         userTableView.dataSource = self
         
-        viewModel.getInfoOfUsers(startFrom: 1) { (bool) in
-            if bool == true {
-                DispatchQueue.main.async {
-                    self.userTableView.reloadData()
-                }
-
-            } else {
-                
+        getUserList()
+ 
+    }
+    
+    func getUserList() {
+        
+        viewModel.getInfoOfUsers(startFromId: 1) { (bool) in
+             if bool == true {
+                 self.viewModel.isFetching = false
+                 DispatchQueue.main.async {
+                     self.userTableView.reloadData()
+                 }
+             } else {
+                print("fail to get user list")
             }
-        }
+         }
     }
     
     
@@ -96,9 +100,16 @@ extension MainViewController:UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "usersTableViewCell") as! usersTableViewCell
-        if let list = viewModel.list {
-            cell.setData(dataArray: list, indexPath: indexPath)
+        guard let list = viewModel.list else {
+            return UITableViewCell()
         }
+        
+        cell.setData(dataArray: list, indexPath: indexPath)
+        
+        if list.count - indexPath.row == 3 {
+            getUserList()
+        }
+        
         
         return cell
     }

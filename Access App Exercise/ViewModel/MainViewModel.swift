@@ -12,21 +12,56 @@ import Foundation
 final class MainViewModel {
     
     var list: [GetAllUserData]?
-//    var singleAvatorDataModel: SingleAvatorDataModel?
     var avatarDetailVM:AvatarDetailViewModel!
-    
-    func getInfoOfUsers(startFrom:Int, isCompleteTask: @escaping (Bool)->()) {
-        
-        NetWorkManager.sharedInstance.getAllUser(since: startFrom) { (GetAllUserDataArray) in
-            
-            guard let array = GetAllUserDataArray else {
-                isCompleteTask(false)
-                return
+    var isNeededToGetMoreUsers = true
+    var isFetching = false
+    var users = 0
+    var page = 0 {
+        didSet {
+            if users < 100 {
+                users += 20
+                print("users : \(users)")
             }
-            self.list = array
-            isCompleteTask(true)
+        }
+    }
+    
+    func getInfoOfUsers(startFromId:Int, isCompleteTask: @escaping (Bool)->()) {
+        
+        if isFetching == false {
+            print("isFetching == false")
+            print("page: \(page)")
+            if page < 5 {
+                page += 1
+                isNeededToGetMoreUsers = true
+            } else {
+                isNeededToGetMoreUsers = false
+            }
+        } else if isFetching == true {
+            isNeededToGetMoreUsers = false
+        }
+        
+        print("isNeededToGetMoreUsers : \(isNeededToGetMoreUsers)")
+        
+        if isNeededToGetMoreUsers == true {
+            
+            self.isFetching = true
+            
+            NetWorkManager.sharedInstance.getAllUser(since: startFromId, users: self.users) { (GetAllUserDataArray) in
+                
+                guard let array = GetAllUserDataArray else {
+                    isCompleteTask(false)
+                    return
+                }
+                self.list = array
+                isCompleteTask(true)
+                
+            }
             
         }
+        
+        
+        
+
         
     }
     
@@ -39,7 +74,6 @@ final class MainViewModel {
                 return
             }
             self.avatarDetailVM = AvatarDetailViewModel(singleAvatorDataModel: avatar)
-//            self.singleAvatorDataModel = avatar
             isCompleteTask(true)
         }
         

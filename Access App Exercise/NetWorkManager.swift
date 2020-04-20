@@ -31,7 +31,7 @@ class NetWorkManager {
     let defaultSession = URLSession(configuration: .default)
     var dataTask:URLSessionTask?
     
-    func getAllUser(since:Int, completeHander: @escaping([GetAllUserData]?)->()) {
+    func getAllUser(since:Int, users:Int, completeHander: @escaping([GetAllUserData]?)->()) {
 
         self.dataTask?.cancel()
         
@@ -39,7 +39,7 @@ class NetWorkManager {
               return
         }
         
-        urlComponent.query = "since=1&page=1&per_page=20"
+        urlComponent.query = "since=1&page=1&per_page=\(users)"
         
         guard let url = urlComponent.url else {
             return
