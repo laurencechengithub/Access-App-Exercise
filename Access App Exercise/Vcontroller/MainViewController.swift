@@ -20,15 +20,11 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
-        
     }
     
     
     
     override func viewWillAppear(_ animated: Bool) {
-        
-
         
         userTableView = UITableView()
         self.view.addSubview(userTableView)
@@ -56,6 +52,30 @@ class MainViewController: UIViewController {
         }
     }
     
+    
+    func toAvatarDetailPage(loginName:String) {
+        
+        viewModel.getSingleUserWith(loginName: loginName) { (bool) in
+            if bool == true {
+                DispatchQueue.main.async {
+                    self.performSegue(withIdentifier: "toAvatarDetail", sender: nil)
+                }
+            } else {
+                
+            }
+        }
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case "toAvatarDetail":
+            let destinationVC = segue.destination as! AvatarDetailViewController
+            
+        default:
+            <#code#>
+        }
+    }
    
 }
 
@@ -84,6 +104,15 @@ extension MainViewController:UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if let list = viewModel.list {
+            let selectAvatarName = list[indexPath.row].login
+            self.toAvatarDetailPage(loginName: selectAvatarName)
+        }
+        
     }
     
 }

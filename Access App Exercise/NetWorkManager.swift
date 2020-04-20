@@ -73,7 +73,6 @@ class NetWorkManager {
             if let error = error {
                 print("error message : \(error)")
             } else if let theData = data, let theResponce = response as? HTTPURLResponse {
-                print(theData)
                 if theResponce.statusCode == 200 {
                     
                     let jsonData = JSON(theData)
