@@ -18,6 +18,7 @@
 		1409D6C6244B69300069A29B /* GetAllUserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1409D6C5244B69300069A29B /* GetAllUserDataModel.swift */; };
 		1409D6C9244B6C550069A29B /* usersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1409D6C8244B6C550069A29B /* usersTableViewCell.swift */; };
 		14283971244D1A7900FE2308 /* AvatarDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14283970244D1A7900FE2308 /* AvatarDetailViewController.swift */; };
+		14283975244D200800FE2308 /* SingleAvatorDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14283974244D200800FE2308 /* SingleAvatorDataModel.swift */; };
 		71DFFE0970B4F40AE31F1521 /* Pods_Access_App_Exercise.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BB81604D4C0659289085B71 /* Pods_Access_App_Exercise.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +36,7 @@
 		1409D6C5244B69300069A29B /* GetAllUserDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllUserDataModel.swift; sourceTree = "<group>"; };
 		1409D6C8244B6C550069A29B /* usersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = usersTableViewCell.swift; sourceTree = "<group>"; };
 		14283970244D1A7900FE2308 /* AvatarDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarDetailViewController.swift; sourceTree = "<group>"; };
+		14283974244D200800FE2308 /* SingleAvatorDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleAvatorDataModel.swift; sourceTree = "<group>"; };
 		7239AA4359167886D959592E /* Pods-Access App Exercise.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Access App Exercise.debug.xcconfig"; path = "Target Support Files/Pods-Access App Exercise/Pods-Access App Exercise.debug.xcconfig"; sourceTree = "<group>"; };
 		9BB81604D4C0659289085B71 /* Pods_Access_App_Exercise.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Access_App_Exercise.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6E400342B2CDA6BE4A58DEC /* Pods-Access App Exercise.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Access App Exercise.release.xcconfig"; path = "Target Support Files/Pods-Access App Exercise/Pods-Access App Exercise.release.xcconfig"; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 		1409D6C7244B69390069A29B /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
+				14283974244D200800FE2308 /* SingleAvatorDataModel.swift */,
 				1409D6C5244B69300069A29B /* GetAllUserDataModel.swift */,
 			);
 			path = DataModel;
@@ -256,6 +259,7 @@
 				14283971244D1A7900FE2308 /* AvatarDetailViewController.swift in Sources */,
 				1409D6C4244B66660069A29B /* MainViewModel.swift in Sources */,
 				1409D6C6244B69300069A29B /* GetAllUserDataModel.swift in Sources */,
+				14283975244D200800FE2308 /* SingleAvatorDataModel.swift in Sources */,
 				1409D6C2244B64D20069A29B /* NetWorkManager.swift in Sources */,
 				1409D6AE244B5B290069A29B /* MainViewController.swift in Sources */,
 				1409D6AA244B5B290069A29B /* AppDelegate.swift in Sources */,
