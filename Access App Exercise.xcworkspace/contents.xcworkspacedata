@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/laurenceMini/Desktop/Access App Exercise/Access App Exercise/readme">
+   </FileRef>
+   <FileRef
       location = "group:Access App Exercise.xcodeproj">
    </FileRef>
    <FileRef

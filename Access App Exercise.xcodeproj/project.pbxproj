@@ -64,6 +64,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		1408E7DE244DFDB7008FDA3F /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				1409D6C1244B64D20069A29B /* NetWorkManager.swift */,
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
 		1409D69D244B5B290069A29B = {
 			isa = PBXGroup;
 			children = (
@@ -87,7 +95,7 @@
 			children = (
 				1409D6A9244B5B290069A29B /* AppDelegate.swift */,
 				1409D6AB244B5B290069A29B /* SceneDelegate.swift */,
-				1409D6C1244B64D20069A29B /* NetWorkManager.swift */,
+				1408E7DE244DFDB7008FDA3F /* Global */,
 				140800B4244BDE3900DBF731 /* View */,
 				14283973244D1A9D00FE2308 /* Vcontroller */,
 				14CD6D71244C4F43008B0BC7 /* ViewModel */,

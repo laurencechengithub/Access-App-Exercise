@@ -1,0 +1,14 @@
+
+This is an exercise for retrieving JSON data from git API.
+
+using Pods like: 'SwiftyJSON', 'Kingfisher'
+
+simple MVVM code using closure with view model,
+
+git documents regarding to pagination isn't helpful to me,
+
+so I've tried to modify the URL instead.
+
+Due to short of time, images for avatar detail page are there in green background
+
+welcome for any code suggestion for a better way to do it.
