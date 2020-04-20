@@ -19,6 +19,7 @@
 		1409D6C9244B6C550069A29B /* usersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1409D6C8244B6C550069A29B /* usersTableViewCell.swift */; };
 		14283971244D1A7900FE2308 /* AvatarDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14283970244D1A7900FE2308 /* AvatarDetailViewController.swift */; };
 		14283975244D200800FE2308 /* SingleAvatorDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14283974244D200800FE2308 /* SingleAvatorDataModel.swift */; };
+		14283977244D689C00FE2308 /* AvatarDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14283976244D689C00FE2308 /* AvatarDetailViewModel.swift */; };
 		71DFFE0970B4F40AE31F1521 /* Pods_Access_App_Exercise.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BB81604D4C0659289085B71 /* Pods_Access_App_Exercise.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +38,7 @@
 		1409D6C8244B6C550069A29B /* usersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = usersTableViewCell.swift; sourceTree = "<group>"; };
 		14283970244D1A7900FE2308 /* AvatarDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarDetailViewController.swift; sourceTree = "<group>"; };
 		14283974244D200800FE2308 /* SingleAvatorDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleAvatorDataModel.swift; sourceTree = "<group>"; };
+		14283976244D689C00FE2308 /* AvatarDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarDetailViewModel.swift; sourceTree = "<group>"; };
 		7239AA4359167886D959592E /* Pods-Access App Exercise.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Access App Exercise.debug.xcconfig"; path = "Target Support Files/Pods-Access App Exercise/Pods-Access App Exercise.debug.xcconfig"; sourceTree = "<group>"; };
 		9BB81604D4C0659289085B71 /* Pods_Access_App_Exercise.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Access_App_Exercise.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6E400342B2CDA6BE4A58DEC /* Pods-Access App Exercise.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Access App Exercise.release.xcconfig"; path = "Target Support Files/Pods-Access App Exercise/Pods-Access App Exercise.release.xcconfig"; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				1409D6C3244B66660069A29B /* MainViewModel.swift */,
+				14283976244D689C00FE2308 /* AvatarDetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -256,6 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14283977244D689C00FE2308 /* AvatarDetailViewModel.swift in Sources */,
 				14283971244D1A7900FE2308 /* AvatarDetailViewController.swift in Sources */,
 				1409D6C4244B66660069A29B /* MainViewModel.swift in Sources */,
 				1409D6C6244B69300069A29B /* GetAllUserDataModel.swift in Sources */,
