@@ -24,6 +24,10 @@ class usersTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+    }
+    
     func setView() {
         
         self.avatarPicImageView = UIImageView()
@@ -36,6 +40,7 @@ class usersTableViewCell: UITableViewCell {
         avatarPicImageView.topAnchor.constraint(equalTo: self.contentView.topAnchor,constant: 10).isActive = true
         avatarPicImageView.heightAnchor.constraint(equalToConstant: 60).isActive = true
         avatarPicImageView.widthAnchor.constraint(equalToConstant:60).isActive = true
+        avatarPicImageView.layer.cornerRadius = 30
         
         avatarNameLabel.translatesAutoresizingMaskIntoConstraints = false
         avatarNameLabel.leadingAnchor.constraint(equalTo: self.avatarPicImageView.trailingAnchor, constant: 10).isActive = true
