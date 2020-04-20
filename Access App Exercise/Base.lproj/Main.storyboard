@@ -25,21 +25,39 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="133.92857142857142"/>
         </scene>
-        <!--View Controller-->
+        <!--Avatar Detail View Controller-->
         <scene sceneID="Gif-ls-ulf">
             <objects>
-                <viewController id="8oo-Rd-zbo" sceneMemberID="viewController">
+                <viewController id="8oo-Rd-zbo" customClass="AvatarDetailViewController" customModule="Access_App_Exercise" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7Ir-Rq-pqd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="K7q-Kn-F9X">
+                                <rect key="frame" x="60" y="93" width="294" height="294"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eEa-Ug-HCS">
+                                <rect key="frame" x="186" y="437" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="pgE-a0-ZVq" firstAttribute="bottom" secondItem="K7q-Kn-F9X" secondAttribute="bottom" constant="421" id="3wo-X3-Vuc"/>
+                            <constraint firstItem="K7q-Kn-F9X" firstAttribute="top" secondItem="pgE-a0-ZVq" secondAttribute="top" constant="93" id="Ajl-P4-hvk"/>
+                            <constraint firstItem="pgE-a0-ZVq" firstAttribute="trailing" secondItem="K7q-Kn-F9X" secondAttribute="trailing" constant="60" id="HCY-JS-Rta"/>
+                            <constraint firstItem="K7q-Kn-F9X" firstAttribute="leading" secondItem="pgE-a0-ZVq" secondAttribute="leading" constant="60" id="arc-M5-iCU"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="pgE-a0-ZVq"/>
                     </view>
                     <navigationItem key="navigationItem" id="dDa-rL-Qxa"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uPE-QI-jJM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1221" y="141"/>
+            <point key="canvasLocation" x="1218.840579710145" y="140.625"/>
         </scene>
     </scenes>
 </document>

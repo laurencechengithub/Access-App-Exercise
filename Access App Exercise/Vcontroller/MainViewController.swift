@@ -73,7 +73,7 @@ class MainViewController: UIViewController {
             let destinationVC = segue.destination as! AvatarDetailViewController
             
         default:
-            <#code#>
+            break
         }
     }
    
